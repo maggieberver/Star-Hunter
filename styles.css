@@ -1,0 +1,264 @@
+body {
+    background-color:black;
+}
+
+h1{
+    color: white;
+    text-align: center;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 50px;
+    letter-spacing: 8px;
+}
+
+#niveles{
+    display: flex;
+    flex-direction: column;
+    margin: 70px;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 120px;
+    height: 50px;
+    margin-top: 20px;
+    padding: 0.9rem 1.8rem;
+    font-size: 16px;
+    font-weight: 700;
+    color: white;
+    border: 3px solid yellow;
+    cursor: pointer;
+    position: relative;
+    background-color: transparent;
+    text-decoration: none;
+    overflow: hidden;
+    z-index: 1;
+    font-family: arial;
+}
+
+button::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: yellow;
+  color: black;
+  transform: translateX(-100%);
+  transition: all .3s;
+  z-index: -1;
+}
+
+button:hover::before {
+  transform: translateX(0);
+}
+
+#juego{
+    display: flex;
+    position: absolute;
+    margin: auto;
+    right: 0;
+    left: 0;
+    top: 50px;
+    bottom: 0;
+    width: 700px;
+    height: 400px;
+    border: 10px solid whitesmoke;
+    border-radius: 5px;
+}
+
+#plataforma{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 30px;
+    background: linear-gradient(to bottom, rgb(31, 63, 28), black);
+}
+
+#vidas{
+    top: 20px;
+    left: 20px;
+    position: absolute;
+    font-size: 25px;
+}
+
+#nivel{
+    top: 60px;
+    left: 25px;
+    position: absolute;
+    font-size: 14px;
+    color: white;
+    font-family: Arial ;
+    text-align: left;
+}
+
+#puntaje{
+    top: 20px;
+    position: absolute;
+    font-size: 25px;
+    color: white;
+    text-align: center;
+    width: 100%;
+    font-family: Impact, Haettenschweiler;
+}
+
+span{
+  font-size: 50px;
+}
+
+#contenedor{
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+    background-size: cover;
+    background-position: center;
+    background: 
+    linear-gradient(to bottom, #0b0b2b, #c3bbf4 70%, #090a0f),
+    radial-gradient(closest-corner circle at 85% 15%, #ccc, #ccc 20%, #445 21%, #223 100%);
+  background-blend-mode: overlay; /* Prueba con lighten, multiply, etc. */
+}
+
+#resultado{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    font-size: 80px;
+    color: white;
+    text-align: center;
+    top: 40%;
+    font-family: Impact, Haettenschweiler;
+}
+
+.stars {
+  width: 1px;
+  height: 1px;
+  position: absolute;
+  background: white;
+  box-shadow: 2vw 5vh 2px white, 10vw 8vh 2px white, 15vw 15vh 1px white,
+    22vw 22vh 1px white, 28vw 12vh 2px white, 32vw 32vh 1px white,
+    38vw 18vh 2px white, 42vw 35vh 1px white, 48vw 25vh 2px white,
+    53vw 42vh 1px white, 58vw 15vh 2px white, 63vw 38vh 1px white,
+    68vw 28vh 2px white, 73vw 45vh 1px white, 78vw 32vh 2px white,
+    83vw 48vh 1px white, 88vw 20vh 2px white, 93vw 52vh 1px white,
+    98vw 35vh 2px white, 5vw 60vh 1px white, 12vw 65vh 2px white,
+    18vw 72vh 1px white, 25vw 78vh 2px white, 30vw 85vh 1px white,
+    35vw 68vh 2px white, 40vw 82vh 1px white, 45vw 92vh 2px white,
+    50vw 75vh 1px white, 55vw 88vh 2px white, 60vw 95vh 1px white,
+    65vw 72vh 2px white, 70vw 85vh 1px white, 75vw 78vh 2px white,
+    80vw 92vh 1px white, 85vw 82vh 2px white, 90vw 88vh 1px white,
+    95vw 75vh 2px white;
+  animation: twinkle 2s infinite linear;
+}
+
+@keyframes twinkle {
+  0%,
+  100% {
+    opacity: 0.8;
+  }
+  50% {
+    opacity: 0.4;
+  }
+}
+
+@keyframes shoot {
+  0% {
+    transform: translateX(0) translateY(0) rotate(25deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(120vw) translateY(50vh) rotate(25deg);
+    opacity: 0;
+  }
+}
+
+/* Additional twinkling stars with different animation timing */
+.stars::after {
+  content: "";
+  position: absolute;
+  width: 3px;
+  height: 3px;
+  background: white;
+  box-shadow: 8vw 12vh 2px white, 16vw 18vh 1px white, 24vw 25vh 2px white,
+    33vw 15vh 1px white, 41vw 28vh 2px white, 49vw 35vh 1px white,
+    57vw 22vh 2px white, 65vw 42vh 1px white, 73vw 28vh 2px white,
+    81vw 48vh 1px white, 89vw 32vh 2px white, 97vw 45vh 1px white,
+    3vw 68vh 2px white, 11vw 75vh 1px white, 19vw 82vh 2px white,
+    27vw 88vh 1px white, 35vw 72vh 2px white, 43vw 85vh 1px white,
+    51vw 92vh 2px white, 59vw 78vh 1px white;
+  animation: twinkle 6s infinite linear reverse;
+}
+
+#stars, #stars2, #stars3 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: transparent;
+  animation: animStar linear infinite;
+}
+
+#stars {
+  width: 3px;
+  height: 3px;
+  box-shadow:
+    1234px 567px #FFF, 432px 678px #FFF, 1023px 1200px #FFF, 200px 1500px #FFF,
+    1400px 1800px #FFF, 1550px 450px #FFF, 1600px 850px #FFF, 800px 600px #FFF;
+  animation-duration: 50s;
+}
+
+#stars::after {
+  content: "";
+  position: absolute;
+  top: 2000px;
+  width: 1px;
+  height: 1px;
+  box-shadow: inherit;
+}
+
+#stars2 {
+  width: 2px;
+  height: 2px;
+  box-shadow:
+    234px 1450px #FFF, 1345px 900px #FFF, 800px 1300px #FFF, 1100px 800px #FFF,
+    300px 400px #FFF, 950px 1600px #FFF;
+  animation-duration: 100s;
+}
+
+#stars2::after {
+  content: "";
+  position: absolute;
+  top: 2000px;
+  width: 2px;
+  height: 2px;
+  box-shadow: inherit;
+}
+
+#stars3 {
+  width: 3px;
+  height: 3px;
+  box-shadow:
+    700px 500px #FFF, 1600px 1000px #FFF, 500px 1700px #FFF, 1300px 300px #FFF;
+  animation-duration: 150s;
+}
+
+#stars3::after {
+  content: "";
+  position: absolute;
+  top: 2000px;
+  width: 3px;
+  height: 3px;
+  box-shadow: inherit;
+}
+
+@keyframes animStar {
+  from {
+    transform: translateY(0px);
+  }
+  to {
+    transform: translateY(-2000px);
+  }
+}
