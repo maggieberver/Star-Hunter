@@ -13,7 +13,7 @@ function iniciar(){
     // Lluvia: crear un nuevo objeto cada 300ms
     intervaloCreacion = setInterval(() => {
         if (objetos.length < 100) {
-            let nuevo = new Objeto(10, document.getElementById('contenedor'));
+            let nuevo = new Objeto(5, document.getElementById('contenedor'));
             objetos.push(nuevo);
         } else {
             clearInterval(intervaloCreacion);
