@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>⭐ Star Hunter</title>
+    <link rel="stylesheet" href="CSS/game.css"> <!--Archivo CSS-->
+</head>
+<body onload="iniciar()"> <!--Ejecuta la función al cargar la página-->
+    
+    <!--Área de juego-->
+    <div id="juego">
+        
+        <!--Área de animaciones-->
+        <div id="contenedor">
+            
+            <!--------------------Estrellas-------------------->
+            <div class="stars"></div>
+            <div id="stars"></div>
+            <div id="stars2"></div>
+            <div id="stars3"></div>
+            <!-------------------------------------------------->
+
+            <!--Barra de vidas-->
+            <div id="vidas">❤️ ❤️ ❤️ ❤️ ❤️</div>
+            
+            <!--------------------Nivel actual y puntaje requerido-------------------->
+            <div id="nivel">
+                <b>Nivel <span id="nivelactual">1</span></b>
+                <br>
+                <div id="puntosnivel">Puntaje requerido: <span id="puntosreq">100</span></div>
+            </div>
+            <!-------------------------------------------------->
+
+            <!--Puntaje actual-->
+            <div id="puntaje">Puntaje:<br><span id="puntos">0</span></div>
+
+        </div>
+        
+        <!--Plataforma-->
+        <div id="plataforma"></div>
+        
+        <!--Pantalla de resultado-->
+        <div id="resultado"></div>
+    
+    </div>
+
+    <!--------------------Scripts-------------------->
+    <script src="JavaScript/clasePersonaje.js"></script>
+    <script src="JavaScript/claseObjeto.js"></script>
+    <script src="JavaScript/claseFantasma.js"></script>
+    <script src="JavaScript/claseFantasmico.js"></script>
+    <script src="JavaScript/general.js"></script>
+    <!-------------------------------------------------->
+
+</body>
+</html>

@@ -1,0 +1,257 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  min-height: 100vh;
+  background: linear-gradient(to bottom, #0b0b2a, #00134d, #192430);
+  overflow: hidden;
+}
+
+h1 {
+  transform: translateX(-50%);
+  text-align: center;
+  width: max-content;
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#dron {
+  content: url('Images/vivo.png');
+  position: absolute;
+  z-index: 2;
+  top: 92%;
+  left: 75%;
+  width: 150px;
+  transform: translate(-50%, -50%);
+  animation: dron 10s infinite linear forwards;
+  animation-delay: 5s;
+}
+
+@keyframes dron {
+  20%{
+    rotate: 10deg;
+    top: 53%;
+    left: 77%;
+  }
+  40% {
+    rotate: -10deg;
+    top: 56%;
+    left: 73%;
+  }
+  100% {
+    rotate: 0deg;
+    top: 92%;
+    left: 75%;
+  }
+}
+
+#cerrar {
+  display: flex;
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  align-items: right;
+  right: 35px;
+  top: 35px;
+  z-index: 999;
+}
+
+/******************************Fondo estrellado******************************/
+.stars {
+  width: 1px;
+  height: 1px;
+  position: absolute;
+  background: white;
+  box-shadow: 2vw 5vh 2px white, 10vw 8vh 2px white, 15vw 15vh 1px white,
+    22vw 22vh 1px white, 28vw 12vh 2px white, 32vw 32vh 1px white,
+    38vw 18vh 2px white, 42vw 35vh 1px white, 48vw 25vh 2px white,
+    53vw 42vh 1px white, 58vw 15vh 2px white, 63vw 38vh 1px white,
+    68vw 28vh 2px white, 73vw 45vh 1px white, 78vw 32vh 2px white,
+    83vw 48vh 1px white, 88vw 20vh 2px white, 93vw 52vh 1px white,
+    98vw 35vh 2px white, 5vw 60vh 1px white, 12vw 65vh 2px white,
+    18vw 72vh 1px white, 25vw 78vh 2px white, 30vw 85vh 1px white,
+    35vw 68vh 2px white, 40vw 82vh 1px white, 45vw 92vh 2px white,
+    50vw 75vh 1px white, 55vw 88vh 2px white, 60vw 95vh 1px white,
+    65vw 72vh 2px white, 70vw 85vh 1px white, 75vw 78vh 2px white,
+    80vw 92vh 1px white, 85vw 82vh 2px white, 90vw 88vh 1px white,
+    95vw 75vh 2px white;
+  animation: twinkle 8s infinite linear;
+}
+
+.shooting-star{
+  position: absolute;
+  width: 100px;
+  height: 2px;
+  background: linear-gradient(90deg, white, transparent);
+  animation: shoot 3s infinite ease-in;
+}
+
+.shooting-star:nth-child(1){
+  top: 20%;
+  left: -100px;
+  animation-delay: 0s;
+}
+
+.shooting-star:nth-child(2){
+  top: 35%;
+  left: -100px;
+  animation-delay: 1s;
+}
+
+.shooting-star:nth-child(3){
+  top: 50%;
+  left: -100px;
+  animation-delay: 2s;
+}
+
+@keyframes twinkle{
+  0%,
+  100% {
+    opacity: 0.8;
+  }
+  50% {
+    opacity: 0.4;
+  }
+}
+
+@keyframes shoot{
+  0% {
+    transform: translateX(0) translateY(0) rotate(25deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(120vw) translateY(50vh) rotate(25deg);
+    opacity: 0;
+  }
+}
+
+.stars::after {
+  content: "";
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  background: white;
+  box-shadow: 8vw 12vh 2px white, 16vw 18vh 1px white, 24vw 25vh 2px white,
+    33vw 15vh 1px white, 41vw 28vh 2px white, 49vw 35vh 1px white,
+    57vw 22vh 2px white, 65vw 42vh 1px white, 73vw 28vh 2px white,
+    81vw 48vh 1px white, 89vw 32vh 2px white, 97vw 45vh 1px white,
+    3vw 68vh 2px white, 11vw 75vh 1px white, 19vw 82vh 2px white,
+    27vw 88vh 1px white, 35vw 72vh 2px white, 43vw 85vh 1px white,
+    51vw 92vh 2px white, 59vw 78vh 1px white;
+  animation: twinkle 6s infinite linear reverse;
+}
+/**********************************************************************/
+
+/******************************Botón de inicio******************************/
+.btn-cssbuttons {
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  --btn-color: linear-gradient(to right, #f35342, #b42e23);
+  position: absolute;
+  text-align: center;
+  width: 300px;
+  padding: 16px 32px;
+  font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-size: 25px;
+  letter-spacing: 10px;
+  line-height: 1;
+  color: white;
+  background: none;
+  border: none;
+  outline: none;
+  overflow: hidden;
+  cursor: pointer;
+  filter: drop-shadow(0 2px 8px rgba(39, 94, 254, 0.32));
+  transition: 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+
+.btn-cssbuttons::before {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  background: var(--btn-color);
+  border-radius: 24px;
+  transition: 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+
+.btn-cssbuttons span, .btn-cssbuttons span span {
+  display: inline-flex;
+  vertical-align: middle;
+  transition: 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+
+.btn-cssbuttons span {
+  transition-delay: 0.05s;
+}
+
+.btn-cssbuttons span:first-child {
+  padding-right: 7px;
+}
+
+.btn-cssbuttons span span {
+  margin-left: 8px;
+  transition-delay: 0.1s;
+}
+
+.btn-cssbuttons ul {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  display: flex;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  transform: translateY(-50%);
+}
+
+.btn-cssbuttons ul li {
+  flex: 1;
+}
+
+.btn-cssbuttons ul li img {
+  display: inline-flex;
+  vertical-align: middle;
+  transform: translateY(55px);
+  transition: 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+
+.btn-cssbuttons ul li img:hover {
+  opacity: 0.5;
+}
+
+.btn-cssbuttons:hover::before {
+  transform: scale(1.2);
+}
+
+.btn-cssbuttons:hover span, .btn-cssbuttons:hover span span {
+  transform: translateY(-55px);
+}
+
+.btn-cssbuttons:hover ul li img {
+  transform: translateY(0);
+}
+
+.btn-cssbuttons:hover ul li:nth-child(1) a {
+  transition-delay: 0.15s;
+}
+
+.btn-cssbuttons:hover ul li:nth-child(2) a {
+  transition-delay: 0.2s;
+}
+
+.btn-cssbuttons:hover ul li:nth-child(3) a {
+  transition-delay: 0.25s;
+}
+/**********************************************************************/
